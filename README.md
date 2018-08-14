@@ -1,107 +1,110 @@
-# xavierthi.github.io-Weather_Website<!doctype html>
-<html lang="en">
+# Unit 12 | Assignment - Web Visualization Dashboard (Latitude)
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+## Background
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+Data is more powerful when we share it with others! Let's take what we've learned about HTML and CSS to create a dashboard showing off the analysis we've done.
 
+![Images/landingResize.png](Images/landingResize.png)
 
-</head>
+## Latitude - Latitude Analysis Dashboard with Attitude
 
-<body>
-  <nav class="navbar navbar-expand-md navbar-light border border-bottom" style="padding-top: 0px; padding-bottom: 0px;">
-    <a class="navbar-brand" href="index.html"><h3>Lattitude</h3></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Plots
-        </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="temperature.html">Temperature</a>
-            <a class="dropdown-item" href="humidity.html">Humidity</a>
-            <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
-            <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="comparison.html">Comparison</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="data.html">Data</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <br>
+For this homework we'll be creating a visualization dashboard website using visualizations we've created in a past assignment. Specifically, we'll be plotting [weather data](Resources/cities.csv).
 
-  <!--  Start page content  -->
+In building this dashboard, we'll create individual pages for each plot and a means by which we can navigate between them. These pages will contain the visualizations and their corresponding explanations. We'll also have a landing page, a page where we can see a comparison of all of the plots, and another page where we can view the data used to build them.
 
-  <div class="container">
-      <div class="col-md-12">
-          <div class="sigline">
-              <p>
-                  Thiago Xavier: University of Denver| Data Analytics Boot Camp
-              </p>
-          </div>
-      </div>
-  </div>
-      
+### Website Requirements
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <h5 class="card-header">Summary: Latitude vs X</h5>
-          <div class="card-body">
-            <img src='Resources/assets/images/Fig1.png' class='float-left' width='40%'>
-            <p class="card-text">The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
-            <p class="card-text">After Assembling the dataset, we used Matplotlib to plot various aspects of the weather vs latitude. Factors we looked at included: temperature, cloudiness, wind speed and humidity. This site provides the source data and visualizations created
-              as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="card">
-          <h5 class="card-header">Visualizations</h5>
-          <div class="card-body" align='center'>
-            <a href='temperature.html'>
-            <img src='Resources/assets/images/Fig1.png' width='40%'>
-          </a>
-            <a href='humidity.html'>
-            <img src='Resources/assets/images/Fig2.png' width='40%'>
-            </a>
-            <a href='cloudiness.html'>
-            <img src='Resources/assets/images/Fig3.png' width='40%'>
-            </a>
-            <a href='windspeed.html'>
-            <img src='Resources/assets/images/Fig4.png' width='40%'>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+For reference, see the ["Screenshots" section](#screenshots) below.
 
-  <nav class="navbar fixed-bottom border border-top" styles='border-top: 2px solid teal; border: 2px'>
-    <div class="mx-auto">
-      &copy; Copyright Thiago Xavier
-    </div>
-  </nav>
+The website must consist of 7 pages total, including:
 
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+* A [landing page](#landing-page) containing:
+  * An explanation of the project.
+  * Links to each visualizations page.
+* Four [visualization pages](#visualization-pages), each with:
+  * A descriptive title and heading tag.
+  * The plot/visualization itself for the selected comparison.
+  * A paragraph describing the plot and its significance.
+* A ["Comparisons" page](#comparisons-page) that:
+  * Contains all of the visualizations on the same page so we can easily visually compare them.
+  * Uses a bootstrap grid for the visualizations.
+    * The grid must be two visualizations across on screens medium and larger, and 1 across on extra-small and small screens.
+* A ["Data" page](#data-page) that:
+  * Displays a responsive table containing the data used in the visualizations.
+    * The table must be a bootstrap table component.
+    * The data must come from exporting the `.csv` file as HTML, or converting it to HTML. You may use a csv-to-html table conversion tool, e.g. [ConvertCSV](http://www.convertcsv.com/csv-to-html.htm).
 
-</html>
+The website must, at the top of every page, have a navigation menu that:
+
+* Has the name of the site on the left of the nav which allows users to return to the landing page from any page.
+* Contains a dropdown on the right of the navbar named "Plots" which provides links to each individual visualization page.
+* Provides two more links on the right: "Comparisons" which links to the comparisons page, and "Data" which links to the data page.
+* Is responsive (using media queries). The nav must have similar behavior as the screenshots ["Navigation Menu" section](#navigation-menu) (notice the background color change).
+
+Finally, the website must be deployed to GitHub pages.
+
+When finished, submit to BootcampSpot the links to 1) the deployed app and 2) the GitHub repository.
+
+### Considerations
+
+* You may use the [weather data](Resources/cities.csv) or choose another dataset. Alternatively, you may use the included [cities dataset](Resources/cities.csv) and pull the images from the [assets folder](Resources/assets).
+* You must use bootstrap. This includes using the bootstrap `navbar` component for the header on every page, the bootstrap table component for the data page, and the bootstrap grid for responsiveness on the comparison page.
+* You must deploy your website to GitHub pages, with the website working on a live, publicly accessible URL as a result.
+* Be sure to use a CSS media query for the navigation menu.
+* Be sure your website works at all window widths/sizes.
+* Feel free to take some liberty in the visual aspects, but keep the core functionality the same.
+
+### Bonuses
+
+* Use a different dataset! The requirements above still hold, but make it your own.
+* Use a bootstrap theme to customize your website. You may use a tool like [Bootswatch](https://bootswatch.com/). Make it look snazzy, give it some attitude. If using this, be sure you also meet all of the requirements listed above.
+* Add extra visualizations! The more comparisons the better, right?
+* Use meaningful glyphicons next to links in the header.
+* Have visualization navigation on every visualizations page with an active state. See the screenshots below.
+
+### Screenshots
+
+This section contains screenshots of each page that must be built, at varying screen widths. These are a guide; you can meet the requirements without having the pages look exactly like the below images.
+
+#### Landing page
+
+Large screen:
+![Landing page large screen](Images/landing-lg.png)
+
+Small screen:
+![Landing page small screen](Images/landing-sm.png)
+￼
+
+#### Comparisons page
+
+Large screen:
+![comparison page large screen](Images/comparison-lg.png)
+
+Small screen:
+![comparison page small screen](Images/comparison-sm.png)
+
+#### Data page
+
+Large screen:
+![data page large screen](Images/data-lg.png)
+
+Small screen:
+![data page small screen](Images/data-sm.png)
+
+#### Visualization pages
+
+You'll build four of these, one for each visualization. Here's an example of one:
+
+Large screen:
+![visualize page large screen](Images/visualize-lg.png)
+
+Small screen:
+![visualize page small screen](Images/visualize-sm.png)
+
+#### Navigation menu
+
+Large screen:
+![nav menu large screen](Images/nav-lg.png)
+
+Small screen:
+![nav menu small screen](Images/nav-sm.png)
