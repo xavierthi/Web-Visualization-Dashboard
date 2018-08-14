@@ -1,0 +1,33 @@
+body {
+    background-color: whitesmoke;
+  }
+  
+  h3 {
+    color: white;
+  }
+  
+  .navbar {
+    background-color: white;
+  }
+  
+  .navbar-brand {
+    background-color: blue;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .col-4, .col-6 {
+    background-color: white;
+  }
+  
+  .card-header {
+    background-color: white;
+    color: blue;
+    text-align: center;
+  }
+
+
+  .sigline{
+    color: black;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif}
